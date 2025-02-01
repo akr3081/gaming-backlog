@@ -4,7 +4,7 @@
   "description": "Express service for pulling games data",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node api/index.js",
     "test": "test"
   },
   "repository": {
