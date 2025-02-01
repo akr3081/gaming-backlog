@@ -1,9 +1,10 @@
 {
   "name": "gaming-backlog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express service for pulling games data",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "test"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/akr3081/gaming-backlog/issues"
   },
-  "homepage": "https://github.com/akr3081/gaming-backlog#readme"
+  "homepage": "https://github.com/akr3081/gaming-backlog#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
