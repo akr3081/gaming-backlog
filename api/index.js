@@ -1,5 +1,5 @@
-var express = require('express');
-var app = module.exports = express();
+const express = require('express');
+const app = express();
 
 app.get('/', (req, res) =>{
     res.send('Hello World');
@@ -13,3 +13,5 @@ if (!module.parent) {
   app.listen(3000);
   console.log('Gaming Backlog service started on port 3000...');
 };
+
+module.exports = app;
