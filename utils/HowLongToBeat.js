@@ -1,6 +1,6 @@
 const axios = require('axios');
 const hltb = require('howlongtobeat');
-const { getHeaders } = require('./Headers');
+const { getHeaders } = require('./headers');
 
 const hltbService = new hltb.HowLongToBeatService();
 

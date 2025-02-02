@@ -1,5 +1,5 @@
 const HLTBController = require('express').Router();
-const hltb = require('../utils/HowLongToBeat');
+const hltb = require('../utils/howLongToBeat');
 
 HLTBController.get('/', (req, res) => {
   const searchTerm = req?.query?.searchTerm;

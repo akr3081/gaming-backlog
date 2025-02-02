@@ -1,5 +1,5 @@
 const MetacriticController = require('express').Router();
-const metacritic = require('../utils/Metacritic');
+const metacritic = require('../utils/metacritic');
 
 MetacriticController.get('/', (req, res) => {
   const searchTerm = req?.query?.searchTerm;

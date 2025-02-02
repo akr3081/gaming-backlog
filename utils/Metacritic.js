@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { getHeaders } = require('./Headers');
+const { getHeaders } = require('./headers');
 
 const SEARCH_URL = 'https://backend.metacritic.com/finder/metacritic/autosuggest';
 const DETAILS_URL = 'https://backend.metacritic.com/composer/metacritic/pages/games';
