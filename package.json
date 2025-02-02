@@ -1,7 +1,7 @@
 {
   "name": "gaming-backlog",
   "version": "1.0.0",
-  "description": "Express service for pulling games data",
+  "description": "Microservice for pulling metadata for games",
   "main": "index.js",
   "scripts": {
     "start": "node api/index.js",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/akr3081/gaming-backlog.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/akr3081/gaming-backlog/issues"
   },

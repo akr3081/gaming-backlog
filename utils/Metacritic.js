@@ -1,43 +1,30 @@
 const axios = require('axios');
-const UserAgent = require('user-agents');
+const { getHeaders } = require('./Headers');
 
 const SEARCH_URL = 'https://backend.metacritic.com/finder/metacritic/autosuggest';
 const DETAILS_URL = 'https://backend.metacritic.com/composer/metacritic/pages/games';
 
 const search = async (searchTerm) => {
   const url = `${SEARCH_URL}/${searchTerm}`;
+  const headers = getHeaders('https://www.metacritic.com');
 
-  const headers = {
-    'User-Agent': new UserAgent().toString(),
-    'content-type': 'application/json',
-    origin: 'https://www.metacritic.com',
-    referer: 'https://www.metacritic.com/',
-  };
-
-  console.log(`Metacritic Search request at ${url}...`);
-
+  console.log(`Metacritic Search request at '${url}'...`);
   try {
     const result = await axios.get(url, {
       headers,
-      timeout: 30000,
+      timeout: 3000,
     });
     return result.data;
   } catch (error) {
-    throw new Error('Search');
+    throw new Error(`Metacritic Search Error - ${error}`);
   }
 };
 
 const details = async (game_id) => {
   const url = `${DETAILS_URL}/${game_id}/web`;
+  const headers = getHeaders('https://www.metacritic.com');
 
-  const headers = {
-    'User-Agent': new UserAgent().toString(),
-    'content-type': 'application/json',
-    origin: 'https://www.metacritic.com',
-    referer: 'https://www.metacritic.com/',
-  };
-
-  console.log(`Metacritic Details request at ${url}...`);
+  console.log(`Metacritic Details request at '${url}'...`);
 
   try {
     const result = await axios.get(url, {
@@ -46,7 +33,7 @@ const details = async (game_id) => {
     });
     return result.data;
   } catch (error) {
-    throw new Error('Details');
+    throw new Error(`Metacritic Details Error - ${error}`);
   }
 };
 

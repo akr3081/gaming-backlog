@@ -1,7 +1,7 @@
 const axios = require('axios');
-const UserAgent = require('user-agents');
-
 const hltb = require('howlongtobeat');
+const { getHeaders } = require('./Headers');
+
 const hltbService = new hltb.HowLongToBeatService();
 
 const SEARCH_URL = `https://howlongtobeat.com/api/s`;
@@ -35,13 +35,7 @@ const defaultPayload = {
 const search = async (searchTerm) => {
   const search = { ...defaultPayload, searchTerms: [searchTerm] };
   const url = `${SEARCH_URL}/5b26492381a39f41`;
-
-  const headers = {
-    'User-Agent': new UserAgent().toString(),
-    'content-type': 'application/json',
-    origin: 'https://howlongtobeat.com/',
-    referer: 'https://howlongtobeat.com/',
-  };
+  const headers = getHeaders('https://howlongtobeat.com');
 
   console.log(`HLTB Search request at ${url}...`);
 
